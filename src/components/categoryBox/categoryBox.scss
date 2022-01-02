@@ -1,0 +1,14 @@
+$background-color: #fff;
+
+.category-box {
+  background-color: $background-color;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 255px;
+  height: auto;
+  width: 100%;
+  row-gap: 14px;
+  column-gap: 8px;
+  padding: 24px 0 24px 24px;
+  border-radius: 10px;
+}

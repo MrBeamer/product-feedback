@@ -1,0 +1,36 @@
+$background-color: #fff;
+
+$planned-color: #f49f85;
+$progress-color: #ad1fea;
+$live-color: #62bcfa;
+
+.roadmap {
+  background-color: $background-color;
+  max-width: 255px;
+  width: 100%;
+  border-radius: 10px;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item::before {
+    content: "\2022";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0;
+  }
+
+  &__item.planned::before {
+    color: $planned-color;
+  }
+
+  &__item.progress::before {
+    color: $progress-color;
+  }
+
+  &__item.live::before {
+    color: $live-color;
+  }
+}

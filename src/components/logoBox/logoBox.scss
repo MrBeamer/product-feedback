@@ -1,0 +1,37 @@
+//color variables
+$white: #fff;
+$gradient-color-1: #e84d70;
+$gradient-color-2: #a337f6;
+$gradient-color-3: #28a7ed;
+
+.logo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 255px;
+  height: 137px;
+  width: 100%;
+  gap: 10px;
+
+  background: radial-gradient(
+    128.88% 128.88% at 103.9% -10.39%,
+    $gradient-color-1 0%,
+    $gradient-color-2 53.09%,
+    $gradient-color-3 100%
+  );
+  border-radius: 10px;
+
+  &__icon {
+    color: $white;
+    font-size: 45px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.25px;
+    color: $white;
+  }
+}

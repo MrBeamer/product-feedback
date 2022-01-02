@@ -1,0 +1,10 @@
+//color variables
+$text-color: #4661e6;
+$background-color: #f2f4ff;
+
+.label {
+  color: $text-color;
+  background-color: $background-color;
+  border-radius: 10px;
+  padding: 6px 16px;
+}
