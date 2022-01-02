@@ -3,34 +3,81 @@ $background-color: #fff;
 $planned-color: #f49f85;
 $progress-color: #ad1fea;
 $live-color: #62bcfa;
+$headline-color: #3a4374;
+$text-color: #647196;
+$link-color: #4661e6;
 
 .roadmap {
   background-color: $background-color;
   max-width: 255px;
   width: 100%;
   border-radius: 10px;
+  padding: 19px 24px 24px 24px;
+  position: relative;
+
+  &__flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    color: $headline-color;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    color: $link-color;
+  }
 
   &__list {
     list-style: none;
   }
 
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-left: 18px;
+  }
+
   &__item::before {
-    content: "\2022";
-    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    content: "";
     display: inline-block;
-    width: 1em;
-    margin-left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 16px;
+    justify-content: unset;
   }
 
   &__item.planned::before {
-    color: $planned-color;
+    background-color: $planned-color;
   }
 
   &__item.progress::before {
-    color: $progress-color;
+    background-color: $progress-color;
   }
 
   &__item.live::before {
-    color: $live-color;
+    background-color: $live-color;
+  }
+
+  &__item--quantity {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: right;
+    color: $text-color;
   }
 }
