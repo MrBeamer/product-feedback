@@ -1,5 +1,4 @@
 $background-color: #fff;
-
 $planned-color: #f49f85;
 $progress-color: #ad1fea;
 $live-color: #62bcfa;
@@ -46,6 +45,7 @@ $link-color: #4661e6;
     justify-content: space-between;
     position: relative;
     padding-left: 18px;
+    padding-bottom: 8px;
   }
 
   &__item::before {

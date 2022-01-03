@@ -1,0 +1,55 @@
+$background-color-1: #ad1fea;
+$background-color-2: #4661e6;
+$background-color-3: #3a4374;
+$background-color-4: #d73737;
+$text-color: #f2f4fe;
+
+.btn {
+  display: inline-block;
+  width: 158px;
+  height: 44px;
+  color: $text-color;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  padding: 12px 24px;
+  cursor: pointer;
+
+  &--purple {
+    background-color: $background-color-1;
+    &:hover {
+      background-color: #c75af6;
+    }
+  }
+
+  &--blue {
+    background-color: $background-color-2;
+    &:hover {
+      background-color: #7c91f9;
+    }
+  }
+
+  &--darkblue {
+    background-color: $background-color-3;
+    &:hover {
+      background-color: #656ea3;
+    }
+  }
+
+  &--red {
+    background-color: $background-color-4;
+    &:hover {
+      background-color: #e98888;
+    }
+  }
+}
+
+.small {
+  width: 93px;
+}
+
+.medium {
+  width: 142px;
+}

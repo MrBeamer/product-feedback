@@ -1,0 +1,31 @@
+$background-color: #373f68;
+$text-color: #fff;
+
+.info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background-color;
+  width: 825px;
+  height: 72px;
+  padding: 24px;
+  border-radius: 10px;
+
+  &__container {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__icon {
+    width: 23px;
+    height: 24px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    color: $text-color;
+  }
+}

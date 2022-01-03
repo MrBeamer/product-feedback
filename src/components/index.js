@@ -4,3 +4,4 @@ export { default as CategoryBox } from "./categoryBox/CategoryBox";
 export { default as Label } from "./label/Label";
 export { default as RoadMapBox } from "./roadMapBox/RoadMapBox";
 export { default as InfoBar } from "./infoBar/InfoBar";
+export { default as Button } from "./button/Button";
