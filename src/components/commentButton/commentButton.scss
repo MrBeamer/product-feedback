@@ -1,0 +1,19 @@
+.comment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  &__icon {
+    width: 16px;
+  }
+
+  &__number {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: -0.222222px;
+    color: #3a4374;
+  }
+}

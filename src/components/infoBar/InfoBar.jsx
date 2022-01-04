@@ -1,6 +1,8 @@
 import React from "react";
 import "./infoBar.scss";
 import { Button } from "../";
+import { SortSwitch } from "../";
+
 import iconSuggestions from "../../assets/suggestions/icon-suggestions.svg";
 
 export default function InfoBar() {
@@ -13,7 +15,7 @@ export default function InfoBar() {
           alt="icon suggestions"
         ></img>
         <h2 className="info-bar__title">6 Suggestions</h2>
-        <p>Dropdown</p>
+        <SortSwitch />
       </div>
       <Button backgroundColor="purple">+ Add Feedback</Button>
     </div>

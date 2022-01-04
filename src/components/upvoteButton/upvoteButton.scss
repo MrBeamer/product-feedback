@@ -1,0 +1,38 @@
+$text-color-hover: #fff;
+$background-color-hover: #cfd7ff;
+$background-color-active: #4661e6;
+
+.upvote {
+  background-color: #f2f4fe;
+  width: 40px;
+  height: 53px;
+  padding: 11px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__icon {
+    color: #4661e6;
+  }
+
+  &__number {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.180556px;
+    color: #3a4374;
+  }
+
+  &:active {
+    background-color: $background-color-active;
+    color: $text-color-hover;
+  }
+
+  &:hover {
+    background-color: $background-color-hover;
+  }
+}

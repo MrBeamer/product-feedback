@@ -1,7 +1,6 @@
 import "./App.scss";
-import { Navigation } from "./components";
+import { FeedbackContainer, Navigation } from "./components";
 import { InfoBar } from "./components";
-import { Button } from "./components";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
         <Navigation />
         <div className="container">
           <InfoBar />
-          <div className="test">test</div>
+          <FeedbackContainer />
         </div>
       </div>
     </div>

@@ -6,19 +6,20 @@ $text-color: #fff;
   justify-content: space-between;
   align-items: center;
   background-color: $background-color;
-  width: 825px;
+  max-width: 825px;
   height: 72px;
   padding: 24px;
   border-radius: 10px;
+  margin-bottom: 24px;
 
   &__container {
     display: flex;
-    column-gap: 20px;
   }
 
   &__icon {
     width: 23px;
     height: 24px;
+    margin-right: 16px;
   }
 
   &__title {
@@ -27,5 +28,6 @@ $text-color: #fff;
     line-height: 26px;
     letter-spacing: -0.25px;
     color: $text-color;
+    margin-right: 38px;
   }
 }

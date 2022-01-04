@@ -1,6 +1,9 @@
 //color variables
 $text-color: #4661e6;
+$text-color-hover: #fff;
 $background-color: #f2f4ff;
+$background-color-hover: #cfd7ff;
+$background-color-active: #4661e6;
 
 .label {
   color: $text-color;
@@ -8,4 +11,14 @@ $background-color: #f2f4ff;
   border-radius: 10px;
   padding: 6px 16px;
   cursor: pointer;
+  max-width: max-content;
+
+  &:active {
+    background-color: $background-color-active;
+    color: $text-color-hover;
+  }
+
+  &:hover {
+    background-color: $background-color-hover;
+  }
 }

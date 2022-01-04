@@ -1,0 +1,62 @@
+.feedback {
+  max-width: 825px;
+  height: auto;
+  left: 450px;
+  top: 190px;
+
+  padding: 28px 32px;
+  background: #ffffff;
+  border-radius: 10px;
+
+  display: flex;
+  column-gap: 40px;
+
+  //   display: grid;
+  //   grid-template-columns: 40px 1fr 1fr 1fr;
+  //   grid-template-areas:
+  //     "upvote title title comment"
+  //     "upvote text text comment"
+  //     ". label . comment";
+  //   column-gap: 40px;
+
+  &__flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    color: #3a4374;
+    margin-bottom: 5px;
+
+    // grid-area: title;
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    color: #647196;
+    margin-bottom: 12px;
+
+    // grid-area: text;
+  }
+
+  & .upvote {
+    // grid-area: upvote;
+  }
+
+  & .label {
+    // grid-area: label;
+  }
+  & .comment {
+    // grid-area: comment;
+
+    // align-self: center;
+    // justify-self: end;
+    margin-left: auto;
+  }
+}
