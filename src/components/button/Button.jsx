@@ -1,6 +1,7 @@
 import React from "react";
 import "./button.scss";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 export default function Button(props) {
   const { backgroundColor, url, children, size } = props;
@@ -16,8 +17,8 @@ export default function Button(props) {
   });
 
   return (
-    <a href={url} className={classNames}>
+    <Link to={url ?? ""} className={classNames}>
       {children}
-    </a>
+    </Link>
   );
 }

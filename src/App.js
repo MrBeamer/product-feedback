@@ -1,18 +1,16 @@
 import "./App.scss";
-import { FeedbackContainer, Navigation } from "./components";
-import { InfoBar } from "./components";
-
+import { Homepage, AddFeedback } from "./views/";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="app-container">
-      <div className="flex-container">
-        <Navigation />
-        <div className="container">
-          <InfoBar />
-          <FeedbackContainer />
-        </div>
+    <BrowserRouter>
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/add-feedback" element={<AddFeedback />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

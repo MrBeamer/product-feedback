@@ -16,6 +16,7 @@ $text-color: #f2f4fe;
   text-align: center;
   padding: 12px 24px;
   cursor: pointer;
+  text-decoration: none;
 
   &--purple {
     background-color: $background-color-1;
@@ -44,12 +45,12 @@ $text-color: #f2f4fe;
       background-color: #e98888;
     }
   }
-}
 
-.small {
-  width: 93px;
-}
+  &--small {
+    width: 93px;
+  }
 
-.medium {
-  width: 142px;
+  &--medium {
+    width: 142px;
+  }
 }

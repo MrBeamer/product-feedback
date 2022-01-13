@@ -11,3 +11,6 @@ export { default as Feedback } from "./feedback/Feedback";
 export { default as FeedbackContainer } from "./feedbackContainer/FeedbackContainer";
 export { default as UpvoteButton } from "./upvoteButton/UpvoteButton";
 export { default as CommentButton } from "./commentButton/CommentButton";
+export { default as CreateFeedback } from "./createFeedback/CreateFeedback";
+export { default as DropdownFilter } from "./dropdownFilter/DropdownFilter";
+export { default as NoFeedback } from "./noFeedback/NoFeedback";

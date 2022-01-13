@@ -1,18 +1,19 @@
 import React from "react";
 import "./sortSwitch.scss";
 
-export default function SortSwitch() {
+export default function SortSwitch({ options }) {
   return (
-    <div className="sort-switch">
+    <div className="dropdown">
       <select
-        className="sort-switch__select"
+        className="dropdown__select"
         defaultValue="Most Upvotes"
         aria-label="filter upvotes and comments"
       >
-        <option value="">Most Upvotes</option>
-        <option value="">Least Upvotes</option>
-        <option value="">Most Comments</option>
-        <option value="">Least Comments</option>
+        {options.map((option, index) => (
+          <option key={index} className="dropdown__option" value={option.value}>
+            {option.text}
+          </option>
+        ))}
       </select>
     </div>
   );

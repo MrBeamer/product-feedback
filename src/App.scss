@@ -2,10 +2,20 @@
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1600px;
-  padding: 94px 165px 0 165px;
+  padding: 94px 155px 0 155px;
 }
 
 .flex-container {
   display: flex;
   column-gap: 30px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 825px;
+  width: 100%;
 }

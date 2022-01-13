@@ -1,8 +1,22 @@
-.sort-switch {
+.dropdown {
   width: 200px;
   position: relative;
 
   &__select {
-    // display: none;
+    -webkit-appearance: none;
+    background-color: #373f68;
+    border: none;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #f2f4fe;
+  }
+
+  &__option {
+    -webkit-appearance: none;
+    background-color: red;
+    border: none;
+    color: #f2f4fe;
   }
 }

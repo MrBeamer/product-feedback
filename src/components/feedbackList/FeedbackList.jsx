@@ -1,7 +1,9 @@
 import React from "react";
 import "./feedbackList.scss";
-import { Feedback } from "../";
+import { Feedback, NoFeedback } from "../";
+
+const items = true;
 
 export default function FeedbackList() {
-  return <Feedback />;
+  return items ? <Feedback /> : <NoFeedback />;
 }

@@ -14,6 +14,7 @@ $text-color: #fff;
 
   &__container {
     display: flex;
+    align-items: center;
   }
 
   &__icon {
@@ -29,5 +30,13 @@ $text-color: #fff;
     letter-spacing: -0.25px;
     color: $text-color;
     margin-right: 38px;
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #f2f4fe;
+    margin-right: 5px;
   }
 }

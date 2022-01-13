@@ -1,0 +1,70 @@
+.create-feedback {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 540px;
+  width: 100%;
+  padding: 52px 42px 40px 42px;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    top: -27px;
+    left: 32px;
+  }
+
+  &__headline {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: -0.333333px;
+    color: #3a4374;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.194444px;
+    color: #3a4374;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    color: #647196;
+    margin-bottom: 16px;
+  }
+
+  &__input {
+    background: #f7f8fd;
+    border-radius: 5px;
+    margin-bottom: 24px;
+    border: none;
+    padding: 13px 24px;
+    width: 100%;
+
+    font-size: 15px;
+    line-height: 22px;
+    color: #3a4374;
+  }
+
+  &__flex-container {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 16px;
+  }
+
+  &__dropdown {
+    background: #f7f8fd;
+    border-radius: 5px;
+    margin-bottom: 24px;
+    border: none;
+    padding: 13px 24px;
+    width: 100%;
+
+    font-size: 15px;
+    line-height: 22px;
+    color: #3a4374;
+  }
+}

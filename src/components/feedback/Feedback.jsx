@@ -18,5 +18,3 @@ export default function Feedback() {
     </div>
   );
 }
-//new method flex box justify between and first element align-self start
-//second element align self center and third element same
