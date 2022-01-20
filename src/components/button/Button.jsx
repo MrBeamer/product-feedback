@@ -4,8 +4,7 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 
 export default function Button(props) {
-  const { backgroundColor, url, children, size } = props;
-
+  const { backgroundColor, url, children, size, onAddList, ...rest } = props;
   const classNames = clsx({
     btn: true,
     "btn--purple": backgroundColor === "purple",
@@ -17,7 +16,12 @@ export default function Button(props) {
   });
 
   return (
-    <Link to={url ?? ""} className={classNames}>
+    <Link
+      to={url ?? ""}
+      className={classNames}
+      onClick={onAddList ?? ""}
+      {...rest}
+    >
       {children}
     </Link>
   );

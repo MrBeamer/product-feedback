@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+
 import { FeedbackContext } from "../utility/FeedbackContext";
 import { useParams } from "react-router-dom";
-import { Feedback } from "../components";
+import { Feedback, Button, Form, FormLabel, Textarea } from "../components";
+import arrowLeft from "../assets/shared/icon-arrow-left.svg";
 
 export default function FeedbackView() {
   const { feedbackId } = useParams();
@@ -15,17 +18,25 @@ export default function FeedbackView() {
 
   console.log(foundFeedback);
 
-  return <Feedback feedback={foundFeedback}></Feedback>;
-}
-
-{
-  /* <div className="feedback">
-<UpvoteButton feedback={feedback} />
-<div className="feedback__flex-container">
-  <h2 className="feedback__title">{feedback.title}</h2>
-  <p className="feedback__text">{feedback.detail}</p>
-  <Label>{feedback.category}</Label>
-</div>
-<CommentButton feedback={feedback} />
-</div> */
+  return (
+    <>
+      <main className="main">
+        <div className="flex-container">
+          <div className="back-btn">
+            <img src={arrowLeft} alt="arrow-left"></img>
+            <Link to="/">Go Back</Link>
+          </div>
+          <Button backgroundColor="purple" url="/edit">
+            Edit Feedback
+          </Button>
+        </div>
+        <Feedback feedback={foundFeedback}></Feedback>
+        <Form style={{ maxWidth: "825px" }}>
+          <FormLabel label="Add Comment" />
+          <Textarea />
+          <p>{`${"250"} Characters left`}</p>
+        </Form>
+      </main>
+    </>
+  );
 }

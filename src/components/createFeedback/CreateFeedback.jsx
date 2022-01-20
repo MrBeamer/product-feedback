@@ -29,9 +29,10 @@ export default function CreateFeedback() {
     <>
       <form
         className="create-feedback"
-        onSubmit={(event) => {
-          context.addToList(event, feedback, setFeedback);
-        }}
+        // no need because no post
+        // onSubmit={(event) => {
+        //   context.addToList(event, feedback, setFeedback);
+        // }}
       >
         <img className="create-feedback__icon" src={plusIcon} alt="plus icon" />
         <h2 className="create-feedback__headline">Create New Feedback</h2>
@@ -92,13 +93,24 @@ export default function CreateFeedback() {
           <Button backgroundColor="darkblue" url="/" size="small">
             Cancel
           </Button>
-          <input
+          {/* <input
             className="create-feedback__submit"
             type="submit"
             value="Add Feedback"
-          />
+          /> */}
+          <Button
+            backgroundColor="purple"
+            url="/"
+            onAddList={(event) => {
+              context.addToList(event, feedback, setFeedback);
+            }}
+          >
+            Add Feedback
+          </Button>
         </div>
       </form>
     </>
   );
 }
+
+// input and onChange on form are commented out because if I decide to do a fullstack app i need to be able to post

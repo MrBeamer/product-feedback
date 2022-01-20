@@ -10,7 +10,7 @@ function FeedbackProvider(props) {
     setFeedbackList((prevList) => [...prevList, feedback]);
     localStorage.setItem("listFeedback", JSON.stringify(feedbackList));
     setFeedback({ ...feedback, title: "", category: "Feature", detail: "" });
-    event.preventDefault();
+    // event.preventDefault(); only for submit
   }
 
   const value = {

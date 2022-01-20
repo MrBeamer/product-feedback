@@ -11,15 +11,14 @@
   display: flex;
   column-gap: 40px;
   margin-bottom: 20px;
+  width: 100%;
 
-  //   display: grid;
   //   grid-template-columns: 40px 1fr 1fr 1fr;
   //   grid-template-areas:
   //     "upvote title title comment"
   //     "upvote text text comment"
   //     ". label . comment";
   //   column-gap: 40px;
-
   &__flex-container {
     display: flex;
     flex-direction: column;

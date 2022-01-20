@@ -17,3 +17,4 @@ export { default as NoFeedback } from "./noFeedback/NoFeedback";
 export { default as FormInput } from "./formInput/FormInput";
 export { default as Form } from "./form/Form";
 export { default as FormLabel } from "./formLabel/FormLabel";
+export { default as Textarea } from "./textarea/Textarea";

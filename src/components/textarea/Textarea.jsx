@@ -1,12 +1,12 @@
 import React from "react";
-import "./formInput.scss";
+import "./textarea.scss";
 
-export default function FormInput(props) {
+export default function Textarea(props) {
   const { type, value, onInputChange, test, ...rest } = props;
 
   return (
-    <input
-      className="input"
+    <textarea
+      className="textarea"
       type={type ?? "text"}
       name="title"
       id="title"
@@ -14,6 +14,8 @@ export default function FormInput(props) {
       onChange={onInputChange}
       required
       {...rest}
+      rows="2"
+      maxLength="250"
     />
   );
 }
