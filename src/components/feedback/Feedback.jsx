@@ -2,19 +2,16 @@ import React from "react";
 import "./feedback.scss";
 import { Label, UpvoteButton, CommentButton } from "../";
 
-export default function Feedback() {
+export default function Feedback({ feedback }) {
   return (
     <div className="feedback">
-      <UpvoteButton />
+      <UpvoteButton feedback={feedback} />
       <div className="feedback__flex-container">
-        <h2 className="feedback__title">Add tags for solutions</h2>
-        <p className="feedback__text">
-          Easier to search for solutions based on a specific stack. Easier to
-          search for solutions based on a specific stack.
-        </p>
-        <Label>Enhancement</Label>
+        <h2 className="feedback__title">{feedback.title}</h2>
+        <p className="feedback__text">{feedback.detail}</p>
+        <Label>{feedback.category}</Label>
       </div>
-      <CommentButton />
+      <CommentButton feedback={feedback} />
     </div>
   );
 }

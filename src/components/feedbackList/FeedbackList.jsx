@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./feedbackList.scss";
 import { Feedback, NoFeedback } from "../";
-
-const items = true;
+import { FeedbackContext } from "../../utility/FeedbackContext";
 
 export default function FeedbackList() {
-  return items ? <Feedback /> : <NoFeedback />;
+  const context = useContext(FeedbackContext);
+
+  return (
+    <>
+      {context.feedbackList.length !== 0 ? (
+        context.feedbackList.map((item, index) => (
+          <Feedback key={index} feedback={item} />
+        ))
+      ) : (
+        <NoFeedback />
+      )}
+    </>
+  );
 }

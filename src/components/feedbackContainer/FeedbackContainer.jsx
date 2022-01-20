@@ -2,10 +2,10 @@ import React from "react";
 import "./feedbackContainer.scss";
 import { FeedbackList } from "../";
 
-export default function FeedbackContainer() {
+export default function FeedbackContainer({ onSubmitClick }) {
   return (
     <div className="feedback-container">
-      <FeedbackList></FeedbackList>
+      <FeedbackList onSubmitClick={onSubmitClick}></FeedbackList>
     </div>
   );
 }

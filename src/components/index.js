@@ -14,3 +14,6 @@ export { default as CommentButton } from "./commentButton/CommentButton";
 export { default as CreateFeedback } from "./createFeedback/CreateFeedback";
 export { default as DropdownFilter } from "./dropdownFilter/DropdownFilter";
 export { default as NoFeedback } from "./noFeedback/NoFeedback";
+export { default as FormInput } from "./formInput/FormInput";
+export { default as Form } from "./form/Form";
+export { default as FormLabel } from "./formLabel/FormLabel";

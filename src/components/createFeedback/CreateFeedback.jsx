@@ -1,44 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./createFeedback.scss";
 import { Button } from "../";
-import { SortSwitch } from "../";
+import { FeedbackContext } from "../../utility/FeedbackContext";
 import plusIcon from "../../assets/shared/icon-new-feedback.svg";
 
 export default function CreateFeedback() {
   const [feedback, setFeedback] = useState({
+    id: "",
     title: "",
     category: "Feature",
     detail: "",
+    upvotes: 0,
+    comments: [],
+    status: "planned",
   });
-  function handleSubmitClick(event) {
-    console.log(feedback);
-    setFeedback({ ...feedback, title: "", category: "Feature", detail: "" });
-    event.preventDefault();
-  }
+
+  const context = useContext(FeedbackContext);
+
   function handleInputChange(event) {
     const value = event.currentTarget.value;
     const input = event.currentTarget.name;
-
-    if (input === "title") {
-      feedback.title = value;
-      setFeedback((prev) => {
-        return { ...prev, title: value };
-      });
-    } else if (input === "category") {
-      setFeedback((prev) => {
-        return { ...prev, category: value };
-      });
-    } else {
-      feedback.detail = value;
-      setFeedback((prev) => {
-        return { ...prev, detail: value };
-      });
-    }
+    setFeedback((prev) => {
+      return { ...prev, [input]: value, id: Math.floor(Math.random() * 999) };
+    });
   }
 
   return (
     <>
-      <form className="create-feedback" onSubmit={handleSubmitClick}>
+      <form
+        className="create-feedback"
+        onSubmit={(event) => {
+          context.addToList(event, feedback, setFeedback);
+        }}
+      >
         <img className="create-feedback__icon" src={plusIcon} alt="plus icon" />
         <h2 className="create-feedback__headline">Create New Feedback</h2>
         <label htmlFor="create-feedback__title">Feedback Title</label>
@@ -52,6 +46,7 @@ export default function CreateFeedback() {
           id="title"
           value={feedback.title}
           onChange={handleInputChange}
+          required
         />
         <label htmlFor="create-feedback__title">Category</label>
         <p className="create-feedback__subtitle">
@@ -91,13 +86,17 @@ export default function CreateFeedback() {
           id="detail"
           value={feedback.detail}
           onChange={handleInputChange}
+          required
         />
         <div className="create-feedback__flex-container">
           <Button backgroundColor="darkblue" url="/" size="small">
             Cancel
           </Button>
-          <Button backgroundColor="purple">Add Feedback</Button>
-          <input type="submit" value="Add Feedback" />
+          <input
+            className="create-feedback__submit"
+            type="submit"
+            value="Add Feedback"
+          />
         </div>
       </form>
     </>

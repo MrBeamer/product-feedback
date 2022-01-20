@@ -49,6 +49,27 @@
     color: #3a4374;
   }
 
+  &__submit {
+    display: inline-block;
+    width: 158px;
+    height: 44px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #ad1fea;
+
+    &:hover {
+      background-color: #c75af6;
+    }
+  }
+
   &__flex-container {
     display: flex;
     justify-content: flex-end;

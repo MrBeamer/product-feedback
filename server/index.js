@@ -1,3 +1,21 @@
+// const express = require("express");
+// const app = express();
+// const port = 5000;
+// const path = require("path");
+
+// /// add middleware
+// app.use(express.static("public"));
+
+// app.get("/", (req, res) => {
+//   //   res.sendFile(__dirname + "Homepage.jsx");
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
+
+// app.listen(port, () => {
+//   console.log(`Example app listening at http://localhost:${port}`);
+// });
+
+///---------------
 const mongoose = require("mongoose");
 
 //Creates a new database to work with and connects to our database, which is hosted locally
