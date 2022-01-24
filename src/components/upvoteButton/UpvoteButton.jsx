@@ -12,7 +12,7 @@ export default function UpvoteButton({ feedback }) {
   return (
     <div className="upvote" onClick={addVote}>
       <i className="fas fa-angle-up upvote__icon"></i>
-      <p className="upvote__number">{votes}</p>
+      <p className="upvote__number">{feedback.upvotes}</p>
     </div>
   );
 }

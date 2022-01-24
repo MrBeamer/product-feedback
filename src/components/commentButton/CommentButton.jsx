@@ -12,7 +12,7 @@ export default function CommentButton({ feedback }) {
         src={iconComments}
         alt="icon comments"
       />
-      <p className="comment-btn__number">2</p>
+      <p className="comment-btn__number">{feedback.comments?.length ?? 0}</p>
     </Link>
   );
 }

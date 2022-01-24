@@ -3,10 +3,13 @@ import "./commentContainer.scss";
 import { Heading, CommentList } from "../";
 
 export default function CommentContainer({ feedback }) {
-  console.log(feedback?.comments);
-  return feedback.comments?.length !== 0 ? (
+  const comments = feedback.comments?.length;
+
+  return comments !== 0 ? (
     <div className="commentContainer">
-      <Heading>4 Comments</Heading>
+      <Heading>{`${comments} ${
+        comments > 1 ? "Comments" : "Comment"
+      }`}</Heading>
       <CommentList feedback={feedback} />
     </div>
   ) : null;

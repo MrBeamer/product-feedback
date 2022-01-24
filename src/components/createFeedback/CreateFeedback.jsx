@@ -13,11 +13,14 @@ export default function CreateFeedback() {
     upvotes: 0,
     comments: [
       {
-        avatar: "https://i.pravatar.cc/150",
-        fullname: "Elijah Moss",
-        username: "@hexagon.bestagon",
+        id: "",
         text: `Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor in the evening after my device’s dark mode turns on without the bright background it currently
     has.`,
+        user: {
+          image: "https://i.pravatar.cc/150",
+          name: "Elijah Moss",
+          username: "@hexagon.bestagon",
+        },
       },
     ],
     status: "planned",
