@@ -18,3 +18,7 @@ export { default as FormInput } from "./formInput/FormInput";
 export { default as Form } from "./form/Form";
 export { default as FormLabel } from "./formLabel/FormLabel";
 export { default as Textarea } from "./textarea/Textarea";
+export { default as Heading } from "./heading/Heading";
+export { default as CommentContainer } from "./commentContainer/CommentContainer";
+export { default as CommentList } from "./commentList/CommentList";
+export { default as Comment } from "./comment/Comment";

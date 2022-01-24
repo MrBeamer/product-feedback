@@ -6,7 +6,7 @@ export default function Form(props) {
   return (
     <form className="form" {...rest}>
       <img className="form__icon" src={icon ?? ""} alt={icon} />
-      <h2 className="form__headline">{title}</h2>
+      {title && <h2 className="form__headline">{title}</h2>}
       {children}
     </form>
   );
