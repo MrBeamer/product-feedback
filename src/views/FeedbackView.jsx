@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
 import { FeedbackContext } from "../utility/FeedbackContext";
 import { useParams } from "react-router-dom";
 import {
@@ -16,8 +15,11 @@ import arrowLeft from "../assets/shared/icon-arrow-left.svg";
 export default function FeedbackView() {
   const [feedback, setFeedback] = useState({});
   const { feedbackId } = useParams();
+  const [comment, setComment] = useState("");
   const context = useContext(FeedbackContext);
+  const { pathname } = useLocation();
 
+  //find the clicked feedback in the feedbacklist
   useEffect(() => {
     const foundFeedback = context.feedbackList.find(
       (feedback) => feedback.id === Number(feedbackId)
@@ -25,11 +27,34 @@ export default function FeedbackView() {
     setFeedback(foundFeedback);
   }, [context.feedbackList, feedbackId]);
 
-  // const foundFeedback = context.feedbackList.find(
-  //   (feedback) => feedback.id === Number(feedbackId)
-  // );
+  // get input from textarea
+  function handleInputChange(event) {
+    const userInput = event.target.value;
+    setComment(userInput);
+  }
 
-  console.log(feedback);
+  function addComment() {
+    setFeedback({
+      ...feedback,
+      comments: [
+        ...feedback.comments,
+        {
+          id: 1,
+          text: comment,
+          user: {
+            image: "image-suzanne",
+            name: "Suzanne Chang",
+            username: "upbeat1811",
+          },
+        },
+      ],
+    });
+    setComment("");
+  }
+
+  useEffect(() => {
+    context.updateFeedback(feedback);
+  }, [context, feedback]);
 
   return (
     <>
@@ -39,7 +64,7 @@ export default function FeedbackView() {
             <img src={arrowLeft} alt="arrow-left"></img>
             <Link to="/">Go Back</Link>
           </div>
-          <Button backgroundColor="purple" url="/edit">
+          <Button backgroundColor="purple" url={`${pathname}/edit`}>
             Edit Feedback
           </Button>
         </div>
@@ -47,10 +72,14 @@ export default function FeedbackView() {
         <CommentContainer feedback={feedback} />
         <Form style={{ maxWidth: "825px", padding: "24px 32px 32px 32px" }}>
           <Heading style={{ marginBottom: "24px" }}>Add Comment</Heading>
-          <Textarea />
+          <Textarea onInputChange={handleInputChange} value={comment} />
           <div className="flex-container justify-between">
-            <p className="characters-left">{`${"250"} Characters left`}</p>
-            <Button backgroundColor="purple">Post Comment</Button>
+            <p className="characters-left">{`${
+              250 - comment.length
+            } Characters left`}</p>
+            <Button backgroundColor="purple" on={addComment}>
+              Post Comment
+            </Button>
           </div>
         </Form>
       </main>

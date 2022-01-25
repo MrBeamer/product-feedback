@@ -1,14 +1,12 @@
 import React from "react";
 import "./comment.scss";
-import userOne from "../../assets/user-images/image-elijah.jpg";
-// ./assets/user-images/image-suzanne.jpg
+
 export default function Comment({ comment }) {
   if (comment)
     return (
       <div className="comment">
         <img
           className="comment__avatar"
-          // src={comment.user.image}
           src={require(`../../assets/user-images/${comment.user?.image}.jpg`)}
           alt="user icon"
         ></img>

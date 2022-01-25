@@ -8,10 +8,10 @@ export default function Textarea(props) {
     <textarea
       className="textarea"
       type={type ?? "text"}
-      name="title"
-      id="title"
+      name="comment"
+      id="comment"
       value={value}
-      onChange={onInputChange}
+      onChange={(event) => onInputChange(event)}
       required
       {...rest}
       rows="2"

@@ -5,11 +5,10 @@ import { FeedbackContext } from "../../utility/FeedbackContext";
 
 export default function FeedbackList() {
   const context = useContext(FeedbackContext);
-
   return (
     <>
-      {context.feedbackList.length !== 0 ? (
-        context.feedbackList.map((item, index) => (
+      {context.filteredList.length !== 0 ? (
+        context.filteredList.map((item, index) => (
           <Feedback key={index} feedback={item} />
         ))
       ) : (
@@ -18,3 +17,4 @@ export default function FeedbackList() {
     </>
   );
 }
+// context.feedbackList maybe use that and refactored filteredList

@@ -1,11 +1,18 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { FeedbackContext } from "../utility/FeedbackContext";
 import { Button, Form, FormInput, FormLabel } from "../components";
 import editIcon from "../assets/shared/icon-edit-feedback.svg";
 
 export default function EditFeedback() {
+  const { feedbackId } = useParams();
+  const context = useContext(FeedbackContext);
+  console.log(feedbackId);
+
   function handleInputChange(event) {
     const value = event.currentTarget.value;
     const input = event.currentTarget.name;
+
     // setFeedback((prev) => {
     //   return { ...prev, [input]: value };
     // });
@@ -32,7 +39,12 @@ export default function EditFeedback() {
         />
         <FormInput onInputChange={handleInputChange} />
         <div className="create-feedback__flex-container">
-          <Button backgroundColor="red" url="/" size="small">
+          <Button
+            backgroundColor="red"
+            url="/"
+            size="small"
+            on={() => context.deleteFeedback(feedbackId)}
+          >
             Delete
           </Button>
           <Button backgroundColor="darkblue" url="/" size="small">

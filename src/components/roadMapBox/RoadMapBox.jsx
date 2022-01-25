@@ -10,14 +10,14 @@ export default function RoadMapBox() {
 
   const context = useContext(FeedbackContext);
 
-  console.log(context.feedbackList);
-
   useEffect(() => {
     context.feedbackList.forEach((feedback) => {
       if (feedback.status === "planned") {
         setPlanned((prevState) => prevState + 1);
       } else if (feedback.status === "in-progress") {
         setInProgress((prevState) => prevState + 1);
+      } else {
+        setLive((prevState) => prevState + 1);
       }
     });
   }, [context.feedbackList]);
