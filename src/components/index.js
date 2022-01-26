@@ -12,7 +12,6 @@ export { default as FeedbackContainer } from "./feedbackContainer/FeedbackContai
 export { default as UpvoteButton } from "./upvoteButton/UpvoteButton";
 export { default as CommentButton } from "./commentButton/CommentButton";
 export { default as CreateFeedback } from "./createFeedback/CreateFeedback";
-export { default as DropdownFilter } from "./dropdownFilter/DropdownFilter";
 export { default as NoFeedback } from "./noFeedback/NoFeedback";
 export { default as FormInput } from "./formInput/FormInput";
 export { default as Form } from "./form/Form";
@@ -22,3 +21,5 @@ export { default as Heading } from "./heading/Heading";
 export { default as CommentContainer } from "./commentContainer/CommentContainer";
 export { default as CommentList } from "./commentList/CommentList";
 export { default as Comment } from "./comment/Comment";
+export { default as Option } from "./dropdown/Option";
+export { default as Select } from "./dropdown/Select";

@@ -9,10 +9,10 @@ export default function CreateFeedback() {
     id: "",
     title: "",
     category: "Feature",
-    detail: "",
+    description: "",
     upvotes: 0,
     comments: [],
-    status: "planned",
+    status: "suggestion",
   });
 
   const context = useContext(FeedbackContext);
@@ -23,6 +23,7 @@ export default function CreateFeedback() {
     setFeedback((prev) => {
       return { ...prev, [input]: value, id: Math.floor(Math.random() * 999) };
     });
+    // could be a hook same in the edit form
   }
 
   return (
@@ -83,9 +84,9 @@ export default function CreateFeedback() {
         <input
           className="create-feedback__input"
           type="text-field"
-          name="detail"
-          id="detail"
-          value={feedback.detail}
+          name="description"
+          id="description"
+          value={feedback.description}
           onChange={handleInputChange}
           required
         />

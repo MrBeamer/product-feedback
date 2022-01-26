@@ -34,21 +34,23 @@ export default function FeedbackView() {
   }
 
   function addComment() {
-    setFeedback({
-      ...feedback,
-      comments: [
-        ...feedback.comments,
-        {
-          id: 1,
-          text: comment,
-          user: {
-            image: "image-suzanne",
-            name: "Suzanne Chang",
-            username: "upbeat1811",
+    // prevents empty comments
+    if (comment.length > 10)
+      setFeedback({
+        ...feedback,
+        comments: [
+          ...feedback.comments,
+          {
+            id: 1,
+            text: comment,
+            user: {
+              image: "image-suzanne",
+              name: "Suzanne Chang",
+              username: "upbeat1811",
+            },
           },
-        },
-      ],
-    });
+        ],
+      });
     setComment("");
   }
 

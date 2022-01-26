@@ -26,6 +26,9 @@ function FeedbackProvider(props) {
 
   //finds in the initial list - the matching feedback and updates it with the passed in value
   function updateFeedback(feedbackUpdate) {
+    console.log(feedbackUpdate);
+    console.log(feedbackUpdate.id);
+
     const indexOfFeedback = feedbackList.findIndex(
       (feedback) => feedback.id === feedbackUpdate.id
     );

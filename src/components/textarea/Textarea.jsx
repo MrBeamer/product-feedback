@@ -2,14 +2,14 @@ import React from "react";
 import "./textarea.scss";
 
 export default function Textarea(props) {
-  const { type, value, onInputChange, test, ...rest } = props;
+  const { type, name, value, onInputChange, ...rest } = props;
 
   return (
     <textarea
       className="textarea"
       type={type ?? "text"}
-      name="comment"
-      id="comment"
+      name={name}
+      id={name}
       value={value}
       onChange={(event) => onInputChange(event)}
       required

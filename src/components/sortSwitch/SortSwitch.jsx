@@ -3,14 +3,14 @@ import "./sortSwitch.scss";
 
 export default function SortSwitch({ options }) {
   return (
-    <div className="dropdown">
+    <div className="sort">
       <select
-        className="dropdown__select"
+        className="sort__select"
         defaultValue="Most Upvotes"
         aria-label="filter upvotes and comments"
       >
         {options.map((option, index) => (
-          <option key={index} className="dropdown__option" value={option.value}>
+          <option key={index} className="sort__option" value={option.value}>
             {option.text}
           </option>
         ))}

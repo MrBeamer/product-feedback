@@ -8,7 +8,7 @@ export default function Feedback({ feedback }) {
       <UpvoteButton feedback={feedback} />
       <div className="feedback__flex-container">
         <h2 className="feedback__title">{feedback.title}</h2>
-        <p className="feedback__text">{feedback.detail}</p>
+        <p className="feedback__text">{feedback.description}</p>
         <Label>{feedback.category}</Label>
       </div>
       <CommentButton feedback={feedback} />
