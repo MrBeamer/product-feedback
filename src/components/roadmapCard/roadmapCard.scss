@@ -1,0 +1,100 @@
+$planned-color: #f49f85;
+$progress-color: #ad1fea;
+$live-color: #62bcfa;
+
+.roadmap-card {
+  border-radius: 5px 5px 0px 0px;
+  background-color: #fff;
+  margin-bottom: 24px;
+  padding: 31px;
+
+  &.planned {
+    border-top: 5px solid $planned-color;
+  }
+
+  &.progress {
+    border-top: 5px solid $progress-color;
+  }
+
+  &.live {
+    border-top: 5px solid $live-color;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    &.planned {
+      background-color: $planned-color;
+    }
+
+    &.progress {
+      background-color: $progress-color;
+    }
+
+    &.live {
+      background-color: $live-color;
+    }
+  }
+
+  &__feedback-status {
+    font-size: 16px;
+    line-height: 23px;
+    color: #647196;
+    text-transform: capitalize;
+  }
+
+  &__feedback-title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    color: #3a4374;
+    text-decoration: none;
+    margin-bottom: 4px;
+
+    &:hover {
+      color: #4661e6;
+    }
+  }
+
+  &__feedback-description {
+    font-size: 16px;
+    line-height: 23px;
+    color: #647196;
+    margin-bottom: 16px;
+  }
+
+  &__user-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+}
+
+// .planned {
+//   border-top: 5px solid $planned-color;
+
+// .progress {
+//   border-top: 5px solid $progress-color;
+//   &.roadmap-card{
+//     background-color: $progress-color;
+//  }
+
+// }
+
+// .live {
+//   border-top: 5px solid $live-color;
+//   &.roadmap-card{
+//     background-color: $live-color;
+//  }
+// }

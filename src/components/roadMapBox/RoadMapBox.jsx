@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import "./roadMapBox.scss";
 import { FeedbackContext } from "../../utility/FeedbackContext";
 import { useEffect } from "react/cjs/react.development";
@@ -16,7 +17,7 @@ export default function RoadMapBox() {
         setPlanned((prevState) => prevState + 1);
       } else if (feedback.status === "in-progress") {
         setInProgress((prevState) => prevState + 1);
-      } else {
+      } else if (feedback.status === "live") {
         setLive((prevState) => prevState + 1);
       }
     });
@@ -26,9 +27,9 @@ export default function RoadMapBox() {
     <div className="roadmap">
       <div className="roadmap__flex-container">
         <h2 className="roadmap__title">Roadmap</h2>
-        <a className="roadmap__link" href="/">
+        <Link className="roadmap__link" to="/roadmap">
           View
-        </a>
+        </Link>
       </div>
       <ul className="roadmap__list">
         <li className="roadmap__item planned">

@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FeedbackContext } from "../utility/FeedbackContext";
 import { useParams } from "react-router-dom";
 import {
@@ -9,8 +9,8 @@ import {
   Heading,
   Textarea,
   CommentContainer,
+  GoBack,
 } from "../components";
-import arrowLeft from "../assets/shared/icon-arrow-left.svg";
 
 export default function FeedbackView() {
   const [feedback, setFeedback] = useState({});
@@ -62,10 +62,7 @@ export default function FeedbackView() {
     <>
       <main className="main">
         <div className="flex-container--2 ">
-          <div className="back-btn">
-            <img src={arrowLeft} alt="arrow-left"></img>
-            <Link to="/">Go Back</Link>
-          </div>
+          <GoBack />
           <Button backgroundColor="purple" url={`${pathname}/edit`}>
             Edit Feedback
           </Button>

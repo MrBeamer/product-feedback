@@ -114,7 +114,7 @@ export default function EditFeedback() {
             url="/"
             on={() => context.updateFeedback(feedback)}
           >
-            Save
+            Save Changes
           </Button>
         </div>
       </Form>

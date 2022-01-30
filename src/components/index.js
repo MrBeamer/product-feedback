@@ -23,3 +23,6 @@ export { default as CommentList } from "./commentList/CommentList";
 export { default as Comment } from "./comment/Comment";
 export { default as Option } from "./dropdown/Option";
 export { default as Select } from "./dropdown/Select";
+export { default as RoadmapList } from "./roadmapList/RoadmapList";
+export { default as RoadmapCard } from "./roadmapCard/RoadmapCard";
+export { default as GoBack } from "./goBack/GoBack";
