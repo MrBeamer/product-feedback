@@ -1,3 +1,4 @@
+import { set } from "mongoose";
 import React, { createContext, useState, useEffect } from "react";
 import data from "../data.json";
 
@@ -49,7 +50,7 @@ function FeedbackProvider(props) {
     // category.push(event.currentTarget.id);
 
     // eslint-disable-next-line array-callback-return
-    const test = feedbackList.filter((feedback) => {
+    const filtered = feedbackList.filter((feedback) => {
       if (feedback.category === category) {
         return feedback;
       } else if (category === "All") {
@@ -57,8 +58,32 @@ function FeedbackProvider(props) {
       }
     });
 
-    setFilteredList(test);
+    setFilteredList(filtered);
   }
+
+  //sorts array and creates a copy of it so react re-renders
+  function sortBy(event) {
+    const value = event.currentTarget.value;
+    console.log(value);
+
+    const sorted = feedbackList.sort((a, b) => {
+      if (value === "leastUpvotes") {
+        return a.upvotes - b.upvotes;
+      } else if (value === "mostUpvotes") {
+        return b.upvotes - a.upvotes;
+      } else if (value === "leastComments") {
+        return a.comments?.length - b.comments?.length;
+      } else if (value === "mostComments") {
+        return b.comments?.length - a.comments?.length;
+      }
+      return 0;
+    });
+
+    // slice makes a copy of array, its needed because react only re-renders if it obtains a new array or a mutated array => sort only sorts only chances the other of the elements => BETTER To summarize: Array.prototype.sort does not create a new array but sorts the existing array in place and returns it:The sorted array. Note that the array is sorted in place, and no copy is made. Therefore the reference doesn't change in which case React will bail out of rendering.
+
+    setFeedbackList(sorted.slice());
+  }
+
   console.log(filteredList);
 
   console.log(feedbackList);
@@ -70,6 +95,7 @@ function FeedbackProvider(props) {
     deleteFeedback,
     filterByCategory,
     filteredList,
+    sortBy,
   };
 
   return (

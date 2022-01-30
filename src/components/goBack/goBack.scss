@@ -6,8 +6,13 @@
     line-height: 20px;
     color: #647196;
   }
-  img {
+
+  svg {
     width: 8px;
     margin-right: 8px;
+  }
+
+  &:hover {
+    filter: brightness(90%);
   }
 }

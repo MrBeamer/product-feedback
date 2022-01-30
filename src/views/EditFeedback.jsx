@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FeedbackContext } from "../utility/FeedbackContext";
 import {
@@ -31,12 +31,6 @@ export default function EditFeedback() {
     status: foundFeedback.status,
   });
 
-  // useEffect(() => {
-  //   const foundFeedback = context.feedbackList.find(
-  //     (feedback) => feedback.id === feedbackId
-  //   );
-  // }, [context.feedbackList]);
-
   console.log(foundFeedback);
 
   function handleInputChange(event) {
@@ -66,11 +60,7 @@ export default function EditFeedback() {
           label="Category"
           subLabel="Choose a category for your feedback"
         />
-        <Select
-          onInputChange={handleInputChange}
-          name="category"
-          value={feedback.category}
-        >
+        <Select onInputChange={handleInputChange} name="category">
           <Option value="Feature">Feature</Option>
           <Option value="UI">UI</Option>
           <Option value="UX">UX</Option>

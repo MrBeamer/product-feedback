@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./infoBar.scss";
 import { Button } from "../";
 import { SortSwitch } from "../";
+import { FeedbackContext } from "../../utility/FeedbackContext";
 import iconSuggestions from "../../assets/suggestions/icon-suggestions.svg";
 
 export default function InfoBar() {
+  const context = useContext(FeedbackContext);
+
   return (
     <div className="info-bar">
       <div className="info-bar__container">
@@ -13,7 +16,11 @@ export default function InfoBar() {
           src={iconSuggestions}
           alt="icon suggestions"
         ></img>
-        <h2 className="info-bar__title">6 Suggestions</h2>
+        <h2 className="info-bar__title">{`${
+          context.feedbackList.filter(
+            (feedback) => feedback.status === "suggestion"
+          ).length
+        } Suggestions`}</h2>
         <p className="info-bar__text">Sort by : </p>
         <SortSwitch
           options={[

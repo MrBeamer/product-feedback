@@ -8,7 +8,6 @@ export default function Roadmap() {
 
   const context = useContext(FeedbackContext);
 
-  console.log(context.feedbackList);
   console.log(planned);
   console.log(progress);
   console.log(live);
@@ -34,7 +33,7 @@ export default function Roadmap() {
   return (
     <>
       <div className="roadmap-bar">
-        <GoBack />
+        <GoBack color="#fff" fColor="#fff" />
         <Button backgroundColor="purple" url={"/add-feedback"}>
           + Add Feedback
         </Button>

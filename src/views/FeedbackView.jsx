@@ -62,7 +62,7 @@ export default function FeedbackView() {
     <>
       <main className="main">
         <div className="flex-container--2 ">
-          <GoBack />
+          <GoBack color="#4661E6" />
           <Button backgroundColor="purple" url={`${pathname}/edit`}>
             Edit Feedback
           </Button>

@@ -57,7 +57,6 @@ export default function CreateFeedback() {
         <select
           className="create-feedback__dropdown"
           name="category"
-          value={feedback.category}
           onChange={handleInputChange}
         >
           <option className="dropdown__option" value="Feature">

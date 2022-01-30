@@ -5,6 +5,7 @@ import { FeedbackContext } from "../../utility/FeedbackContext";
 
 export default function FeedbackList() {
   const context = useContext(FeedbackContext);
+
   return (
     <>
       {context.filteredList.length !== 0 ? (
