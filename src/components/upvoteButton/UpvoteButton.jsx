@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./upvoteButton.scss";
 
-export default function UpvoteButton({ feedback }) {
+export default function UpvoteButton({ feedback, ...rest }) {
   const [votes, setVotes] = useState(0);
 
   function addVote() {
@@ -10,7 +10,7 @@ export default function UpvoteButton({ feedback }) {
   }
 
   return (
-    <div className="upvote" onClick={addVote}>
+    <div className="upvote" {...rest} onClick={addVote}>
       <i className="fas fa-angle-up upvote__icon"></i>
       <p className="upvote__number">{feedback.upvotes}</p>
     </div>

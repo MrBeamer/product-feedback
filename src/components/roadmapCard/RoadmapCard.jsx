@@ -25,7 +25,15 @@ export default function RoadmapCard({ feedback }) {
       </p>
       <Label>{feedback.category}</Label>
       <div className="roadmap-card__user-inputs">
-        <UpvoteButton feedback={feedback} />
+        <UpvoteButton
+          feedback={feedback}
+          style={{
+            flexDirection: "row",
+            columnGap: "12px",
+            width: "69px",
+            height: "40px",
+          }}
+        />
         <CommentButton feedback={feedback} />
       </div>
     </div>
