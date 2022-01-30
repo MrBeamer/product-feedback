@@ -1,8 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./roadMapBox.scss";
 import { FeedbackContext } from "../../utility/FeedbackContext";
-import { useEffect } from "react/cjs/react.development";
 
 export default function RoadMapBox() {
   const [planned, setPlanned] = useState(0);
