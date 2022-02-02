@@ -32,30 +32,32 @@ export default function Roadmap() {
 
   return (
     <>
-      <div className="roadmap-bar">
-        <GoBack color="#fff" fColor="#fff" />
-        <Button backgroundColor="purple" url={"/add-feedback"}>
-          + Add Feedback
-        </Button>
-      </div>
+      <main className="roadmap-flex-container">
+        <div className="roadmap-bar">
+          <GoBack color="#fff" fColor="#fff" />
+          <Button backgroundColor="purple" url={"/add-feedback"}>
+            + Add Feedback
+          </Button>
+        </div>
 
-      <main className="flex-container">
-        <RoadmapList
-          title="Planned"
-          subtitle="Ideas prioritized for research"
-          feedbackList={context.planned}
-        />
+        <div className="roadmap-test">
+          <RoadmapList
+            title="Planned"
+            subtitle="Ideas prioritized for research"
+            feedbackList={context.planned}
+          />
 
-        <RoadmapList
-          title="In-Progress"
-          subtitle="Currently being developed"
-          feedbackList={context.progress}
-        />
-        <RoadmapList
-          title="Live "
-          subtitle="Released features"
-          feedbackList={context.live}
-        />
+          <RoadmapList
+            title="In-Progress"
+            subtitle="Currently being developed"
+            feedbackList={context.progress}
+          />
+          <RoadmapList
+            title="Live "
+            subtitle="Released features"
+            feedbackList={context.live}
+          />
+        </div>
       </main>
     </>
   );

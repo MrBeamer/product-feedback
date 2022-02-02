@@ -1,4 +1,4 @@
-//containers
+//containers checking later all flex containers
 .app-container {
   margin: 0 auto;
   min-height: 100vh;
@@ -11,6 +11,21 @@
   column-gap: 30px;
   justify-content: center;
 }
+
+.roadmap-flex-container {
+  display: flex;
+  column-gap: 30px;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roadmap-test {
+  display: flex;
+  column-gap: 15px;
+}
+
+/// testing if there is better solution to center both elements
 
 .flex-container {
   display: flex;
