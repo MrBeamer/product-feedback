@@ -11,16 +11,19 @@ export default function InfoBar() {
   return (
     <div className="info-bar">
       <div className="info-bar__container">
-        <img
-          className="info-bar__icon"
-          src={iconSuggestions}
-          alt="icon suggestions"
-        ></img>
-        <h2 className="info-bar__title">{`${
-          context.feedbackList.filter(
-            (feedback) => feedback.status === "suggestion"
-          ).length
-        } Suggestions`}</h2>
+        <div className="info-bar__suggestion">
+          <img
+            className="info-bar__icon"
+            src={iconSuggestions}
+            alt="icon suggestions"
+          ></img>
+          <h2 className="info-bar__title">{`${
+            context.feedbackList.filter(
+              (feedback) => feedback.status === "suggestion"
+            ).length
+          } Suggestions`}</h2>
+        </div>
+
         <p className="info-bar__text">Sort by : </p>
         <SortSwitch
           options={[

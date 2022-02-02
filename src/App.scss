@@ -20,9 +20,9 @@
   align-items: center;
 }
 
-.roadmap-test {
+.roadmap-container {
   display: flex;
-  column-gap: 15px;
+  column-gap: 30px;
 }
 
 /// testing if there is better solution to center both elements
@@ -98,16 +98,9 @@
 
 //testing
 
-// .app-container {
-//   margin: 0 auto;
-//   min-height: 100vh;
-//   max-width: 1600px;
-//   padding: 94px 155px 0 155px;
-//   padding-left: clamp(2%, 155px, 155px);
-//   padding-right: clamp(2%, 155px, 155px);
-// }
-
 //media queries
+
+//tablet
 @media only screen and (max-width: 993px) {
   .home-flex-container {
     display: flex;
@@ -125,9 +118,19 @@
     justify-content: center;
     column-gap: 10px;
   }
-}
 
+  .roadmap-container {
+    column-gap: 10px;
+  }
+
+  .logo-box {
+    height: auto;
+  }
+}
+// mobile big
 @media only screen and (max-width: 701px) {
+  // fast uberall font size 13
+
   .app-container {
     padding: 0;
   }
@@ -141,11 +144,34 @@
     border-radius: 0;
   }
 
-  .category-box {
+  .category-box,
+  .roadmap {
     display: none;
   }
 
-  .roadmap {
+  .logo-box .roadmap {
+    display: block;
+  }
+
+  .logo-box .category-box {
+    display: flex;
+  }
+
+  .feedback-container {
+    margin: 0 24px;
+  }
+
+  .info-bar__suggestion {
     display: none;
+  }
+
+  .btn {
+    width: 134px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .logo-box__mobile-menu {
+    display: block;
   }
 }

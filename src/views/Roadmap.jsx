@@ -40,7 +40,7 @@ export default function Roadmap() {
           </Button>
         </div>
 
-        <div className="roadmap-test">
+        <div className="roadmap-container">
           <RoadmapList
             title="Planned"
             subtitle="Ideas prioritized for research"

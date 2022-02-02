@@ -12,7 +12,8 @@ $text-color: #fff;
   border-radius: 10px;
   margin-bottom: 24px;
 
-  &__container {
+  &__container,
+  &__suggestion {
     display: flex;
     align-items: center;
   }
