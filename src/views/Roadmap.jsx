@@ -43,18 +43,18 @@ export default function Roadmap() {
         <RoadmapList
           title="Planned"
           subtitle="Ideas prioritized for research"
-          feedbackList={planned}
+          feedbackList={context.planned}
         />
 
         <RoadmapList
           title="In-Progress"
           subtitle="Currently being developed"
-          feedbackList={progress}
+          feedbackList={context.progress}
         />
         <RoadmapList
           title="Live "
           subtitle="Released features"
-          feedbackList={live}
+          feedbackList={context.live}
         />
       </main>
     </>

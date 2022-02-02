@@ -9,7 +9,8 @@ export default function SortSwitch({ options }) {
     <div className="sort">
       <select
         className="sort__select"
-        defaultValue="Most Upvotes"
+        // takes not a single value instead it takes an object
+        defaultValue={{ label: "Select Dept", value: "mostUpvotes" }}
         aria-label="filter upvotes and comments"
         onChange={(event) => context.sortBy(event)}
       >

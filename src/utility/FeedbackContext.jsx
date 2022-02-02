@@ -5,17 +5,27 @@ import data from "../data.json";
 const FeedbackContext = createContext();
 
 function FeedbackProvider(props) {
-  const [feedbackList, setFeedbackList] = useState([]);
-  const [filteredList, setFilteredList] = useState([]);
+  const [feedbackList, setFeedbackList] = useState(data.productRequests);
+  const [filteredList, setFilteredList] = useState(feedbackList);
+  // const [feedbackList, setFeedbackList] = useState([]);
+  // const [filteredList, setFilteredList] = useState([]);
 
-  //render initial list from json file
-  useEffect(() => {
-    setFeedbackList(data.productRequests);
-  }, []);
+  //render initial list from json file, TMORROW test everything with that disabled
+  // useEffect(() => {
+  //   setFeedbackList(data.productRequests);
+  // }, []);
+
+  // fix roadmap after sorting it doubles values
 
   useEffect(() => {
     setFilteredList(feedbackList);
   }, [feedbackList]);
+
+  //tried to inital sort but that dont work because it will always show this state
+  // useEffect(() => {
+  //   const sorted = feedbackList.sort((a, b) => b.upvotes - a.upvotes);
+  //   setFilteredList(sorted.slice());
+  // }, []);
 
   // adds user feedback to the initial list
   function addToList(event, feedback, setFeedback) {
@@ -84,6 +94,33 @@ function FeedbackProvider(props) {
     setFeedbackList(sorted.slice());
   }
 
+  //testing filtering here needs to be modular
+  const [planned, setPlanned] = useState([]);
+  const [progress, setProgress] = useState([]);
+  const [live, setLive] = useState([]);
+
+  console.log(planned);
+  console.log(progress);
+  console.log(live);
+
+  useEffect(() => {
+    const plannedList = feedbackList.filter(
+      (feedback) => feedback.status === "planned"
+    );
+
+    const progressList = feedbackList.filter(
+      (feedback) => feedback.status === "in-progress"
+    );
+
+    const liveList = feedbackList.filter(
+      (feedback) => feedback.status === "live"
+    );
+
+    setPlanned(plannedList);
+    setProgress(progressList);
+    setLive(liveList);
+  }, [feedbackList]);
+  ///test ending
   console.log(filteredList);
 
   console.log(feedbackList);
@@ -96,6 +133,9 @@ function FeedbackProvider(props) {
     filterByCategory,
     filteredList,
     sortBy,
+    planned,
+    progress,
+    live,
   };
 
   return (
