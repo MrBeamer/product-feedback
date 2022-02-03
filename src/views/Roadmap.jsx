@@ -34,7 +34,10 @@ export default function Roadmap() {
     <>
       <main className="roadmap-flex-container">
         <div className="roadmap-bar">
-          <GoBack color="#fff" fColor="#fff" />
+          <div className="roadmap-bar__content">
+            <GoBack color="#fff" fColor="#fff" />
+            <h2 className="roadmap-bar__title">Roadmap</h2>
+          </div>
           <Button backgroundColor="purple" url={"/add-feedback"}>
             + Add Feedback
           </Button>

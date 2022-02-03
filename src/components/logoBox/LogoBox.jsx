@@ -43,7 +43,9 @@ export default function LogoBox() {
         </div>
       )}
 
-      {isOpen && <div className="logo-box__overlay"></div>}
+      {isOpen && (
+        <div className="logo-box__overlay" onClick={handleOpenClick}></div>
+      )}
     </div>
   );
 }

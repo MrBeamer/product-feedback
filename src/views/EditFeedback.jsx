@@ -45,7 +45,7 @@ export default function EditFeedback() {
     });
   }
   return (
-    <main className="main">
+    <main className="main main--form">
       <Form icon={editIcon} title="Edit">
         <FormLabel
           label="Feedback Title"

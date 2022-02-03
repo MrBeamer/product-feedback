@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { FeedbackContext } from "../utility/FeedbackContext";
 import { useParams } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+
 import {
   Feedback,
   Button,
@@ -10,6 +12,7 @@ import {
   Textarea,
   CommentContainer,
   GoBack,
+  RoadmapCard,
 } from "../components";
 
 export default function FeedbackView() {
@@ -18,6 +21,7 @@ export default function FeedbackView() {
   const [comment, setComment] = useState("");
   const context = useContext(FeedbackContext);
   const { pathname } = useLocation();
+  const isMobile = useMediaQuery({ query: "(max-width: 701px)" });
 
   //find the clicked feedback in the feedbacklist
   useEffect(() => {
@@ -60,14 +64,18 @@ export default function FeedbackView() {
 
   return (
     <>
-      <main className="main">
+      <main className="main main--detail-feedback">
         <div className="flex-container--2 ">
           <GoBack color="#4661E6" />
-          <Button backgroundColor="purple" url={`${pathname}/edit`}>
+          <Button backgroundColor="blue" url={`${pathname}/edit`}>
             Edit Feedback
           </Button>
         </div>
-        <Feedback feedback={feedback}></Feedback>
+        {isMobile ? (
+          <RoadmapCard feedback={feedback} />
+        ) : (
+          <Feedback feedback={feedback} />
+        )}
         <CommentContainer feedback={feedback} />
         <Form style={{ maxWidth: "825px", padding: "24px 32px 32px 32px" }}>
           <Heading style={{ marginBottom: "24px" }}>Add Comment</Heading>
