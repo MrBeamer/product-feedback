@@ -26,3 +26,4 @@ To do:
 - error message when comment is to short or empty and focus needs to be red
 - maybe adding a toast/pop-up when data is saved edited or deleted
 - after edit roadmap is not refreshed with edited status - needs fix
+- flex row gap dont work on mobile needs a fix
