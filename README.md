@@ -27,3 +27,4 @@ To do:
 - maybe adding a toast/pop-up when data is saved edited or deleted
 - after edit roadmap is not refreshed with edited status - needs fix
 - flex row gap dont work on mobile needs a fix
+- input and dropdown are to big and to small on mobile

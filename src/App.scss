@@ -143,6 +143,10 @@
 @media only screen and (max-width: 701px) {
   // fast uberall font size 13
 
+  p {
+    font-size: 13px !important;
+  }
+
   .app-container {
     padding: 0;
   }
