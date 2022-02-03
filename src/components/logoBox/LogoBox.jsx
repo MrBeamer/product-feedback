@@ -8,7 +8,11 @@ export default function LogoBox() {
 
   function handleOpenClick() {
     setIsOpen((prevState) => !prevState);
-    console.log(isOpen);
+
+    //disables scroll when modal/mobile-menu is open
+    !isOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
   }
 
   return (
