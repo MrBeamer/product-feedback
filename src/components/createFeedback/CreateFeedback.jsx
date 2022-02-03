@@ -1,6 +1,14 @@
 import React, { useState, useContext } from "react";
 import "./createFeedback.scss";
-import { Button } from "../";
+import {
+  Button,
+  Form,
+  FormLabel,
+  FormInput,
+  Option,
+  Select,
+  Textarea,
+} from "../";
 import { FeedbackContext } from "../../utility/FeedbackContext";
 import plusIcon from "../../assets/shared/icon-new-feedback.svg";
 
@@ -27,89 +35,51 @@ export default function CreateFeedback() {
   }
 
   return (
-    <>
-      <form
-        className="create-feedback"
-        // no need because no post
-        // onSubmit={(event) => {
-        //   context.addToList(event, feedback, setFeedback);
-        // }}
-      >
-        <img className="create-feedback__icon" src={plusIcon} alt="plus icon" />
-        <h2 className="create-feedback__headline">Create New Feedback</h2>
-        <label htmlFor="create-feedback__title">Feedback Title</label>
-        <p className="create-feedback__subtitle">
-          Add a short, descriptive headline
-        </p>
-        <input
-          className="create-feedback__input"
-          type="text"
-          name="title"
-          id="title"
-          value={feedback.title}
-          onChange={handleInputChange}
-          required
-        />
-        <label htmlFor="create-feedback__title">Category</label>
-        <p className="create-feedback__subtitle">
-          Choose a category for your feedback
-        </p>
-        <select
-          className="create-feedback__dropdown"
-          name="category"
-          onChange={handleInputChange}
+    <Form icon={plusIcon} title="Create New Feedback">
+      <FormLabel
+        label="Feedback Title"
+        subLabel="Add a short, descriptive headline"
+      />
+      <FormInput
+        onInputChange={handleInputChange}
+        value={feedback.title}
+        name="title"
+      />
+      <FormLabel
+        label="Category"
+        subLabel="Choose a category for your feedback"
+      />
+      <Select onInputChange={handleInputChange} name="category">
+        <Option value="Feature">Feature</Option>
+        <Option value="UI">UI</Option>
+        <Option value="UX">UX</Option>
+        <Option value="Enhancement">Enhancement</Option>
+        <Option value="Bug">Bug</Option>
+      </Select>
+      <FormLabel
+        label="Feedback Detail"
+        subLabel="Include any specific comments on what should be improved, added, etc."
+      />
+      <Textarea
+        onInputChange={handleInputChange}
+        value={feedback.description}
+        name="description"
+      />
+      <div className="form-flex-container">
+        <Button backgroundColor="darkblue" url="/" size="small">
+          Cancel
+        </Button>
+        <Button
+          backgroundColor="purple"
+          url="/"
+          on={(event) => {
+            context.addToList(event, feedback, setFeedback);
+          }}
         >
-          <option className="dropdown__option" value="Feature">
-            Feature
-          </option>
-          <option className="dropdown__option" value="UI">
-            UI
-          </option>
-          <option className="dropdown__option" value="UX">
-            UX
-          </option>
-          <option className="dropdown__option" value="Enhancement">
-            Enhancement
-          </option>
-          <option className="dropdown__option" value="Bug">
-            Bug
-          </option>
-        </select>
-
-        <label htmlFor="create-feedback__title">Feedback Detail</label>
-        <p className="create-feedback__subtitle">
-          Include any specific comments on what should be improved, added, etc.
-        </p>
-        <input
-          className="create-feedback__input"
-          type="text-field"
-          name="description"
-          id="description"
-          value={feedback.description}
-          onChange={handleInputChange}
-          required
-        />
-        <div className="create-feedback__flex-container">
-          <Button backgroundColor="darkblue" url="/" size="small">
-            Cancel
-          </Button>
-          {/* <input
-            className="create-feedback__submit"
-            type="submit"
-            value="Add Feedback"
-          /> */}
-          <Button
-            backgroundColor="purple"
-            url="/"
-            on={(event) => {
-              context.addToList(event, feedback, setFeedback);
-            }}
-          >
-            Add Feedback
-          </Button>
-        </div>
-      </form>
-    </>
+          Add Feedback
+        </Button>
+      </div>
+    </Form>
   );
 }
 

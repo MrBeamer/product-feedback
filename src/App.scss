@@ -25,6 +25,12 @@
   column-gap: 30px;
 }
 
+.form-flex-container {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 16px;
+}
+
 /// testing if there is better solution to center both elements
 
 .flex-container {
@@ -191,12 +197,6 @@
     display: block;
   }
 
-  .create-feedback__flex-container {
-    flex-direction: column-reverse;
-    // row-gap: 16px;
-    margin-top: 24px;
-  }
-
   .main {
     &--form {
       padding: 74px 24px 0 24px;
@@ -228,14 +228,28 @@
     border-radius: 0;
   }
 
-  .create-feedback {
-    &__flex-container .btn {
-      width: 100%;
-      margin-bottom: 16px;
-    }
+  .form-flex-container .btn {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .form-flex-container {
+    flex-direction: column-reverse;
+    margin-top: 24px;
   }
 
   #description {
     height: 120px;
+  }
+
+  .info-bar__text,
+  .sort__select {
+    line-height: 23px;
+    font-size: 13px;
+  }
+
+  .select,
+  .input {
+    font-size: 13px;
   }
 }

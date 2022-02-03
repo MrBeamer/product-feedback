@@ -87,7 +87,7 @@ export default function EditFeedback() {
           value={feedback.description}
           name="description"
         />
-        <div className="create-feedback__flex-container">
+        <div className="form-flex-container">
           <Button
             backgroundColor="red"
             url="/"
