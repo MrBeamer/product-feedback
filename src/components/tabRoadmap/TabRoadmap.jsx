@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { FeedbackContext } from "../../utility/FeedbackContext";
-import clsx from "clsx";
 import { RoadmapList } from "../";
 import "./tabRoadmap.scss";
 
@@ -12,16 +11,6 @@ export default function TabRoadmap() {
     console.log(clickedTabId);
     setActiveTab(clickedTabId);
   }
-
-  // const classNames = clsx({
-  //   "tab-roadmap__nav-item": true,
-  //   "btn--purple": backgroundColor === "purple",
-  //   "btn--darkblue": backgroundColor === "darkblue",
-  //   "btn--blue": backgroundColor === "blue",
-  //   "btn--red": backgroundColor === "red",
-  //   "btn--medium": size === "medium",
-  //   "btn--small": size === "small",
-  // });
 
   function showActiveTab() {
     if (activeTab === "planned") {
