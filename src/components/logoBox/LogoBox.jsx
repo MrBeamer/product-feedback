@@ -13,10 +13,6 @@ export default function LogoBox() {
     // !isOpen
     //   ? (document.body.style.overflow = "hidden")
     //   : (document.body.style.overflow = "visible");
-
-    !isOpen
-      ? (document.body.style.position = "fixed")
-      : (document.body.style.position = "relative");
   }
 
   return (
