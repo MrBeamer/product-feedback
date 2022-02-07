@@ -26,3 +26,4 @@ export { default as Select } from "./dropdown/Select";
 export { default as RoadmapList } from "./roadmapList/RoadmapList";
 export { default as RoadmapCard } from "./roadmapCard/RoadmapCard";
 export { default as GoBack } from "./goBack/GoBack";
+export { default as TabRoadmap } from "./tabRoadmap/TabRoadmap";

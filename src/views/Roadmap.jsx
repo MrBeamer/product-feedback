@@ -1,12 +1,15 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import { FeedbackContext } from "../utility/FeedbackContext";
-import { RoadmapList, Button, GoBack } from "../components";
+import { RoadmapList, Button, GoBack, TabRoadmap } from "../components";
+
 export default function Roadmap() {
   const [planned, setPlanned] = useState([]);
   const [progress, setProgress] = useState([]);
   const [live, setLive] = useState([]);
 
   const context = useContext(FeedbackContext);
+  const isMobile = useMediaQuery({ query: "(max-width: 701px)" });
 
   console.log(planned);
   console.log(progress);
@@ -43,24 +46,28 @@ export default function Roadmap() {
           </Button>
         </div>
 
-        <div className="roadmap-container">
-          <RoadmapList
-            title="Planned"
-            subtitle="Ideas prioritized for research"
-            feedbackList={context.planned}
-          />
+        {isMobile ? (
+          <TabRoadmap />
+        ) : (
+          <div className="roadmap-container">
+            <RoadmapList
+              title="Planned"
+              subtitle="Ideas prioritized for research"
+              feedbackList={context.planned}
+            />
 
-          <RoadmapList
-            title="In-Progress"
-            subtitle="Currently being developed"
-            feedbackList={context.progress}
-          />
-          <RoadmapList
-            title="Live "
-            subtitle="Released features"
-            feedbackList={context.live}
-          />
-        </div>
+            <RoadmapList
+              title="In-Progress"
+              subtitle="Currently being developed"
+              feedbackList={context.progress}
+            />
+            <RoadmapList
+              title="Live "
+              subtitle="Released features"
+              feedbackList={context.live}
+            />
+          </div>
+        )}
       </main>
     </>
   );
