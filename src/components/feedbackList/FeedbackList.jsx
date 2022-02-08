@@ -24,4 +24,3 @@ export default function FeedbackList() {
     </>
   );
 }
-// context.feedbackList maybe use that and refactored filteredList
