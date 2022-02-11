@@ -4,6 +4,7 @@ import { RoadmapCard, Heading } from "../";
 
 export default function RoadmapList(props) {
   const { title, subtitle, feedbackList } = props;
+
   return (
     <div className="roadmap-list">
       <Heading>{`${title} (${feedbackList.length})`}</Heading>

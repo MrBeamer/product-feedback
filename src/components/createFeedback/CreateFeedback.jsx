@@ -28,9 +28,11 @@ export default function CreateFeedback() {
   function handleInputChange(event) {
     const value = event.currentTarget.value;
     const input = event.currentTarget.name;
+
     setFeedback((prev) => {
       return { ...prev, [input]: value, id: Math.floor(Math.random() * 999) };
     });
+
     // could be a hook same in the edit form
   }
 

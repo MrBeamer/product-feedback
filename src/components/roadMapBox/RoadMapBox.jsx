@@ -1,31 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./roadMapBox.scss";
-import { FeedbackContext } from "../../utility/FeedbackContext";
+import useRoadmapFilter from "../../utility/useRoadmapFilter.js";
 
 export default function RoadMapBox() {
-  const [planned, setPlanned] = useState([]);
-  const [progress, setProgress] = useState([]);
-  const [live, setLive] = useState([]);
-  const context = useContext(FeedbackContext);
-
-  useEffect(() => {
-    const plannedList = context.feedbackList.filter(
-      (feedback) => feedback.status === "planned"
-    );
-
-    const progressList = context.feedbackList.filter(
-      (feedback) => feedback.status === "in-progress"
-    );
-
-    const liveList = context.feedbackList.filter(
-      (feedback) => feedback.status === "live"
-    );
-
-    setPlanned(plannedList);
-    setProgress(progressList);
-    setLive(liveList);
-  }, [context.feedbackList]);
+  const { planned, progress, live } = useRoadmapFilter();
 
   return (
     <div className="roadmap">

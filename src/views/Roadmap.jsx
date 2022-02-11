@@ -1,37 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { FeedbackContext } from "../utility/FeedbackContext";
 import { RoadmapList, Button, GoBack, TabRoadmap } from "../components";
+import useRoadmapFilter from "../utility/useRoadmapFilter.js";
 
 export default function Roadmap() {
-  const [planned, setPlanned] = useState([]);
-  const [progress, setProgress] = useState([]);
-  const [live, setLive] = useState([]);
-
-  const context = useContext(FeedbackContext);
   const isMobile = useMediaQuery({ query: "(max-width: 701px)" });
-
-  console.log(planned);
-  console.log(progress);
-  console.log(live);
-
-  useEffect(() => {
-    const plannedList = context.feedbackList.filter(
-      (feedback) => feedback.status === "planned"
-    );
-
-    const progressList = context.feedbackList.filter(
-      (feedback) => feedback.status === "in-progress"
-    );
-
-    const liveList = context.feedbackList.filter(
-      (feedback) => feedback.status === "live"
-    );
-
-    setPlanned(plannedList);
-    setProgress(progressList);
-    setLive(liveList);
-  }, [context.feedbackList]);
+  const { planned, progress, live } = useRoadmapFilter();
 
   return (
     <>
@@ -53,18 +27,18 @@ export default function Roadmap() {
             <RoadmapList
               title="Planned"
               subtitle="Ideas prioritized for research"
-              feedbackList={context.planned}
+              feedbackList={planned}
             />
 
             <RoadmapList
               title="In-Progress"
               subtitle="Currently being developed"
-              feedbackList={context.progress}
+              feedbackList={progress}
             />
             <RoadmapList
               title="Live "
               subtitle="Released features"
-              feedbackList={context.live}
+              feedbackList={live}
             />
           </div>
         )}

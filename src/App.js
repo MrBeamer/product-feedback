@@ -10,13 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
 function App() {
-  // const [test, setTest] = useState(() => localStorage.getItem("listFeedback"));
-
-  // let list = localStorage.getItem("listFeedback");
-  // list = JSON.parse(list);
-  // console.log(list);
-
-  // console.log(JSON.parse(test));
   return (
     <BrowserRouter>
       <div className="app-container">
@@ -34,4 +27,3 @@ function App() {
 }
 
 export default App;
-// Naming convention: onSubjectEvent={handleSubjectEvent}
