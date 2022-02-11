@@ -39,7 +39,7 @@ export default function FeedbackView() {
 
   function addComment() {
     // prevents empty comments
-    if (comment.length > 10)
+    if (comment.length > 0)
       setFeedback({
         ...feedback,
         comments: [

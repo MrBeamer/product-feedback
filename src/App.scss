@@ -111,11 +111,6 @@
   }
 }
 
-//testing
-.test1 {
-  color: red;
-}
-
 //media queries
 
 //tablet
@@ -197,14 +192,12 @@
     display: block;
   }
 
-  .main {
-    &--form {
-      padding: 74px 24px 0 24px;
-    }
+  .main--form {
+    padding: 74px 24px 74px 24px;
+  }
 
-    &--detail-feedback {
-      padding: 24px;
-    }
+  .main--detail-feedback {
+    padding: 24px;
   }
 
   .home-flex-container .roadmap-card {

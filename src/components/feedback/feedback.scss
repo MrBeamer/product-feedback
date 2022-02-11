@@ -12,12 +12,7 @@
   column-gap: 40px;
   margin-bottom: 20px;
   width: 100%;
-  //   grid-template-columns: 40px 1fr 1fr 1fr;
-  //   grid-template-areas:
-  //     "upvote title title comment"
-  //     "upvote text text comment"
-  //     ". label . comment";
-  //   column-gap: 40px;
+
   &__flex-container {
     display: flex;
     flex-direction: column;
@@ -30,8 +25,6 @@
     letter-spacing: -0.25px;
     color: #3a4374;
     margin-bottom: 5px;
-
-    // grid-area: title;
   }
 
   &__text {
@@ -40,22 +33,9 @@
     line-height: 23px;
     color: #647196;
     margin-bottom: 12px;
-
-    // grid-area: text;
   }
 
-  & .upvote {
-    // grid-area: upvote;
-  }
-
-  & .label {
-    // grid-area: label;
-  }
   & .comment-btn {
-    // grid-area: comment;
-
-    // align-self: center;
-    // justify-self: end;
     margin-left: auto;
   }
 }

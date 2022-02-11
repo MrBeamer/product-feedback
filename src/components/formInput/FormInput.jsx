@@ -2,7 +2,7 @@ import React from "react";
 import "./formInput.scss";
 
 export default function FormInput(props) {
-  const { type, value, name, onInputChange, test, ...rest } = props;
+  const { type, value, name, onInputChange, ...rest } = props;
 
   return (
     <input

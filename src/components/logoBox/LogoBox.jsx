@@ -11,8 +11,8 @@ export default function LogoBox() {
 
     //disables scroll when modal/mobile-menu is open
     !isOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "visible");
+      ? (document.body.style.position = "fixed")
+      : (document.body.style.position = "relative");
   }
 
   return (

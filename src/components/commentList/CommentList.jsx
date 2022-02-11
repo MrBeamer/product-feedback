@@ -1,6 +1,5 @@
 import React from "react";
 import { Comment } from "../";
-
 import "./commentList.scss";
 
 export default function CommentList({ feedback }) {

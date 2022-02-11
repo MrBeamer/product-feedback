@@ -82,5 +82,3 @@ export default function CreateFeedback() {
     </Form>
   );
 }
-
-// input and onChange on form are commented out because if I decide to do a fullstack app i need to be able to post
