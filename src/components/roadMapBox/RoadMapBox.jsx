@@ -7,12 +7,7 @@ export default function RoadMapBox() {
   const [planned, setPlanned] = useState([]);
   const [progress, setProgress] = useState([]);
   const [live, setLive] = useState([]);
-
   const context = useContext(FeedbackContext);
-
-  console.log(planned);
-  console.log(progress);
-  console.log(live);
 
   useEffect(() => {
     const plannedList = context.feedbackList.filter(

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "./infoBar.scss";
-import { Button } from "../";
-import { SortSwitch } from "../";
+import { Button, SortSwitch } from "../";
 import { FeedbackContext } from "../../utility/FeedbackContext";
 import iconSuggestions from "../../assets/suggestions/icon-suggestions.svg";
 

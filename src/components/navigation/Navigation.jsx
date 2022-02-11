@@ -1,8 +1,6 @@
 import React from "react";
 import "./navigation.scss";
-import { LogoBox } from "../";
-import { CategoryBox } from "../";
-import { RoadMapBox } from "../";
+import { LogoBox, CategoryBox, RoadMapBox } from "../";
 
 export default function Navigation() {
   return (

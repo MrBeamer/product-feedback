@@ -8,7 +8,6 @@ export default function TabRoadmap() {
   const [activeTab, setActiveTab] = useState("planned");
   function handleActiveTabClick(event) {
     const clickedTabId = event.currentTarget.id;
-    console.log(clickedTabId);
     setActiveTab(clickedTabId);
   }
 

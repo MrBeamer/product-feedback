@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "../";
 import "./noFeedback.scss";
-
 import detectiveIcon from "../../assets/suggestions/illustration-empty.svg";
 
 export default function NoFeedback() {

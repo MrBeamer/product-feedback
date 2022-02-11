@@ -1,13 +1,5 @@
-$background-color: #fff;
-$planned-color: #f49f85;
-$progress-color: #ad1fea;
-$live-color: #62bcfa;
-$headline-color: #3a4374;
-$text-color: #647196;
-$link-color: #4661e6;
-
 .roadmap {
-  background-color: $background-color;
+  background-color: #fff;
   width: 100%;
   border-radius: 10px;
   padding: 19px 24px 24px 24px;
@@ -25,14 +17,14 @@ $link-color: #4661e6;
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.25px;
-    color: $headline-color;
+    color: #3a4374;
   }
 
   &__link {
     font-weight: 600;
     font-size: 13px;
     line-height: 19px;
-    color: $link-color;
+    color: #4661e6;
   }
 
   &__list {
@@ -61,15 +53,15 @@ $link-color: #4661e6;
   }
 
   &__item.planned::before {
-    background-color: $planned-color;
+    background-color: #f49f85;
   }
 
   &__item.progress::before {
-    background-color: $progress-color;
+    background-color: #ad1fea;
   }
 
   &__item.live::before {
-    background-color: $live-color;
+    background-color: #62bcfa;
   }
 
   &__item--quantity {
@@ -77,6 +69,6 @@ $link-color: #4661e6;
     font-size: 16px;
     line-height: 23px;
     text-align: right;
-    color: $text-color;
+    color: #647196;
   }
 }

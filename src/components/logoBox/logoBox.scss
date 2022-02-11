@@ -1,8 +1,4 @@
-//color variables
-$white: #fff;
-$gradient-color-1: #e84d70;
-$gradient-color-2: #a337f6;
-$gradient-color-3: #28a7ed;
+$text-color: #fff;
 
 .logo-box {
   display: flex;
@@ -14,14 +10,14 @@ $gradient-color-3: #28a7ed;
 
   background: radial-gradient(
     128.88% 128.88% at 103.9% -10.39%,
-    $gradient-color-1 0%,
-    $gradient-color-2 53.09%,
-    $gradient-color-3 100%
+    #e84d70 0%,
+    #a337f6 53.09%,
+    #28a7ed 100%
   );
   border-radius: 10px;
 
   &__icon {
-    color: $white;
+    color: $text-color;
     font-size: 45px;
   }
 
@@ -35,7 +31,7 @@ $gradient-color-3: #28a7ed;
     font-size: 20px;
     line-height: 29px;
     letter-spacing: -0.25px;
-    color: $white;
+    color: $text-color;
   }
 
   &__subtitle {

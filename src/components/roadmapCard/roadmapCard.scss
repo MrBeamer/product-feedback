@@ -1,3 +1,4 @@
+//color variables:
 $planned-color: #f49f85;
 $progress-color: #ad1fea;
 $live-color: #62bcfa;
@@ -80,21 +81,3 @@ $live-color: #62bcfa;
     margin-top: 16px;
   }
 }
-
-// .planned {
-//   border-top: 5px solid $planned-color;
-
-// .progress {
-//   border-top: 5px solid $progress-color;
-//   &.roadmap-card{
-//     background-color: $progress-color;
-//  }
-
-// }
-
-// .live {
-//   border-top: 5px solid $live-color;
-//   &.roadmap-card{
-//     background-color: $live-color;
-//  }
-// }

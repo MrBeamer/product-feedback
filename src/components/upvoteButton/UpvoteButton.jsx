@@ -6,8 +6,7 @@ export default function UpvoteButton({ feedback, ...rest }) {
 
   function addVote() {
     feedback.upvotes += 1;
-    setVotes(feedback.upvotes);
-    console.log(votes);
+    setVotes(feedback.upvotes) || console.log("Error:" + votes);
   }
 
   return (

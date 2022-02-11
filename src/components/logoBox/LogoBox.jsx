@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { CategoryBox } from "../";
-import { RoadMapBox } from "../";
+import { CategoryBox, RoadMapBox } from "../";
 import "./logoBox.scss";
 
 export default function LogoBox() {
@@ -8,7 +7,6 @@ export default function LogoBox() {
 
   function handleOpenClick() {
     setIsOpen((prevState) => !prevState);
-
     //disables scroll when modal/mobile-menu is open
     !isOpen
       ? (document.body.style.position = "fixed")
