@@ -8,10 +8,6 @@ export default function useRoadmapFilter() {
 
   const context = useContext(FeedbackContext);
 
-  console.log(planned);
-  console.log(progress);
-  console.log(live);
-
   useEffect(() => {
     const plannedList = context.feedbackList.filter(
       (feedback) => feedback.status === "planned"

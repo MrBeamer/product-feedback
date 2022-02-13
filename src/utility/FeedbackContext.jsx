@@ -92,33 +92,6 @@ function FeedbackProvider(props) {
     setFeedbackList(sorted.slice());
   }
 
-  //testing filtering here needs to be modular
-  const [planned, setPlanned] = useState([]);
-  const [progress, setProgress] = useState([]);
-  const [live, setLive] = useState([]);
-
-  console.log(planned);
-  console.log(progress);
-  console.log(live);
-
-  useEffect(() => {
-    const plannedList = feedbackList.filter(
-      (feedback) => feedback.status === "planned"
-    );
-
-    const progressList = feedbackList.filter(
-      (feedback) => feedback.status === "in-progress"
-    );
-
-    const liveList = feedbackList.filter(
-      (feedback) => feedback.status === "live"
-    );
-
-    setPlanned(plannedList);
-    setProgress(progressList);
-    setLive(liveList);
-  }, [feedbackList]);
-  ///test ending
   console.log(filteredList);
 
   console.log(feedbackList);
@@ -131,9 +104,6 @@ function FeedbackProvider(props) {
     filterByCategory,
     filteredList,
     sortBy,
-    planned,
-    progress,
-    live,
   };
 
   return (
