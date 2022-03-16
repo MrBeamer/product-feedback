@@ -49,7 +49,7 @@ export default function TabRoadmap() {
               activeTab === "planned" ? "active--planned" : ""
             }`}
             onClick={handleActiveTabClick}
-          >{`Planned (${context?.planned.length})`}</li>
+          >{`Planned (${context.planned?.length})`}</li>
           <li
             id="in-progress"
             className={`tab-roadmap__nav-item ${
@@ -57,7 +57,7 @@ export default function TabRoadmap() {
             }`}
             onClick={handleActiveTabClick}
           >
-            {`In-Progress (${context?.progress.length})`}
+            {`In-Progress (${context.progress?.length})`}
           </li>
           <li
             id="live"
@@ -65,7 +65,7 @@ export default function TabRoadmap() {
               activeTab === "live" ? "active--live" : ""
             }`}
             onClick={handleActiveTabClick}
-          >{`Live (${context?.live.length})`}</li>
+          >{`Live (${context.live?.length})`}</li>
         </ul>
         <div className="tab-roadmap__line"></div>
       </div>

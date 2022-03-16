@@ -1,4 +1,3 @@
-// import { set } from "mongoose";
 import React, { createContext, useState, useEffect } from "react";
 import data from "../data.json";
 
@@ -19,12 +18,6 @@ function FeedbackProvider(props) {
   useEffect(() => {
     setFilteredList(feedbackList);
   }, [feedbackList]);
-
-  //tried to inital sort but that dont work because it will always show this state
-  // useEffect(() => {
-  //   const sorted = feedbackList.sort((a, b) => b.upvotes - a.upvotes);
-  //   setFilteredList(sorted.slice());
-  // }, []);
 
   // adds user feedback to the initial list
   function addToList(event, feedback, setFeedback) {
