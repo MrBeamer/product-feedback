@@ -1,11 +1,13 @@
-import React, { useState, useContext } from "react";
-import { FeedbackContext } from "../../utility/FeedbackContext";
+import React, { useState } from "react";
 import { RoadmapList } from "../";
 import "./tabRoadmap.scss";
 
+import useRoadmapFilter from "../../utility/useRoadmapFilter.js";
+
 export default function TabRoadmap() {
-  const context = useContext(FeedbackContext);
   const [activeTab, setActiveTab] = useState("planned");
+  const { planned, progress, live } = useRoadmapFilter();
+
   function handleActiveTabClick(event) {
     const clickedTabId = event.currentTarget.id;
     setActiveTab(clickedTabId);
@@ -17,7 +19,7 @@ export default function TabRoadmap() {
         <RoadmapList
           title="Planned"
           subtitle="Ideas prioritized for research"
-          feedbackList={context.planned}
+          feedbackList={planned}
         />
       );
     } else if (activeTab === "in-progress") {
@@ -25,7 +27,7 @@ export default function TabRoadmap() {
         <RoadmapList
           title="In-Progress"
           subtitle="Currently being developed"
-          feedbackList={context.progress}
+          feedbackList={progress}
         />
       );
     } else {
@@ -33,7 +35,7 @@ export default function TabRoadmap() {
         <RoadmapList
           title="Live "
           subtitle="Released features"
-          feedbackList={context.live}
+          feedbackList={live}
         />
       );
     }
@@ -49,7 +51,7 @@ export default function TabRoadmap() {
               activeTab === "planned" ? "active--planned" : ""
             }`}
             onClick={handleActiveTabClick}
-          >{`Planned (${context.planned?.length})`}</li>
+          >{`Planned (${planned.length})`}</li>
           <li
             id="in-progress"
             className={`tab-roadmap__nav-item ${
@@ -57,7 +59,7 @@ export default function TabRoadmap() {
             }`}
             onClick={handleActiveTabClick}
           >
-            {`In-Progress (${context.progress?.length})`}
+            {`In-Progress (${progress.length})`}
           </li>
           <li
             id="live"
@@ -65,7 +67,7 @@ export default function TabRoadmap() {
               activeTab === "live" ? "active--live" : ""
             }`}
             onClick={handleActiveTabClick}
-          >{`Live (${context.live?.length})`}</li>
+          >{`Live (${live.length})`}</li>
         </ul>
         <div className="tab-roadmap__line"></div>
       </div>

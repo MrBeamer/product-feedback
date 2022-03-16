@@ -7,10 +7,10 @@ export default function RoadmapList(props) {
 
   return (
     <div className="roadmap-list">
-      <Heading>{`${title} (${feedbackList.length})`}</Heading>
+      <Heading>{`${title} (${feedbackList?.length})`}</Heading>
       <p className="roadmap-list__subtitle text--common">{subtitle}</p>
 
-      {feedbackList.map((feedback, index) => {
+      {feedbackList?.map((feedback, index) => {
         return <RoadmapCard key={index} feedback={feedback} />;
       })}
     </div>
